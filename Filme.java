@@ -6,19 +6,19 @@ public class Filme {
     private String titulo;
     private int duracao;
     private double avaliacao;
-    private ArrayList<Genero> generos = new ArrayList();
+    private ArrayList<Genero> generos;
 
     public Filme(int id, String titulo, int duracao, double avaliacao) {
         this.id = id;
         this.titulo = titulo;
         this.duracao = duracao;
         this.avaliacao = avaliacao;
-        this.generos = generos;
+        this.generos = new ArrayList();
         
     }
 
     public Filme() {
-        
+        this.generos = new ArrayList();
     }
     
     
@@ -66,7 +66,7 @@ public class Filme {
         if (obj != null && obj instanceof Filme) {
             Filme e = (Filme) obj;
             
-            return this.getTitulo().equalsIgnoreCase(e.getTitulo());
+            return this.getId() == e.getId();
             
         } else { return false;}
             
@@ -74,7 +74,12 @@ public class Filme {
     
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(titulo + " - " + avaliacao + " - " + duracao + "min - " + generos.get(1).getNome());
+        
+        sb.append(this.getTitulo() + " - ");
+        for (int i = 0; i < this.getAvaliacao(); i++) {
+            sb.append("☆");
+        }
+        sb.append(" - " + this.getDuracao() + "min - " + this.generos.get(0).getNome() + " - id: " + this.getId());
      
         return sb.toString();
     }

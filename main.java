@@ -107,6 +107,7 @@ public class main {
                     } else {
                         System.out.println("\nFilme não encontrado. Tente novamente.");
                     }
+                    
                     System.out.println("\nPressione enter para voltar para o menu principal.");
                     read.nextLine();
                     read.nextLine();

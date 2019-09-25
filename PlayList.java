@@ -14,7 +14,7 @@ public class PlayList {
         
    
     public PlayList() {
-        
+        this.filmes = new ArrayList();
     }
 
     public int getId() {
@@ -78,14 +78,14 @@ public class PlayList {
     }
     
     public Filme buscar(String titulo) {
-        Filme f = new Filme();
-        f.setTitulo(titulo);
-        
-        if (filmes.contains(f)) {
-            return filmes.get(filmes.indexOf(f));
-        } else {
-            return null;
+
+        for (Filme f3 : filmes) {
+            if (f3.getTitulo().equals(titulo)) {
+                return f3;
+            }
         }
+
+        return null;
               
     }
 }
