@@ -57,14 +57,15 @@ public class PlayList {
     }
     
     public boolean remover(Filme filme) {
-        if (filmes.contains(filme)) {
-            filmes.remove(filme);
-            return true;
-            
-        } else {
-            return false;
+        for (Filme f2 : filmes) {
+            if (f2.getTitulo().equalsIgnoreCase(filme.getTitulo())) {
+                filmes.remove(f2);
+                return true;
+            }
         }
-     
+
+        return false;
+            
     }
     
     public int calcularDuracao() {
@@ -80,7 +81,7 @@ public class PlayList {
     public Filme buscar(String titulo) {
 
         for (Filme f3 : filmes) {
-            if (f3.getTitulo().equals(titulo)) {
+            if (f3.getTitulo().equalsIgnoreCase(titulo)) {
                 return f3;
             }
         }
