@@ -66,7 +66,7 @@ public class Filme {
         if (obj != null && obj instanceof Filme) {
             Filme e = (Filme) obj;
             
-            return this.getId() == e.getId();
+            return this.getId() == e.getId() && this.getTitulo().equals(e.getTitulo());
             
         } else { return false;}
             
@@ -76,10 +76,19 @@ public class Filme {
         StringBuilder sb = new StringBuilder();
         
         sb.append(this.getTitulo() + " - ");
+
         for (int i = 0; i < this.getAvaliacao(); i++) {
             sb.append("☆");
         }
-        sb.append(" - " + this.getDuracao() + "min - " + this.generos.get(0).getNome() + " - id: " + this.getId());
+
+        sb.append(" - " + this.getDuracao() + "min - id: " + this.getId());
+        sb.append("\nGêneros:\n");
+
+        for (Genero genero : generos) {
+            sb.append(genero + "\n");
+        }
+        
+        sb.append("\n\n");
      
         return sb.toString();
     }

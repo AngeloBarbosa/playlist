@@ -17,10 +17,10 @@ public class main {
         u1.getDataNascimento().setDate(read.nextInt());
         
         System.out.println("\nMês (1-12) : ");
-        u1.getDataNascimento().setMonth(read.nextInt());
+        u1.getDataNascimento().setMonth(read.nextInt() - 1);
         
         System.out.println("\nAno: ");
-        u1.getDataNascimento().setYear(read.nextInt());
+        u1.getDataNascimento().setYear(read.nextInt() - 1900);
         
     
         System.out.println("Criando uma nova playlist: ");
@@ -57,6 +57,8 @@ public class main {
                    
                     System.out.println("\nInsira a seguir os gêneros do filme. Ao terminar, digite 'esc' ao ser pedido o gênero.");
                     String genre;
+
+                    
                     
                     do {
                         System.out.println("Insira o gênero: ");
@@ -109,7 +111,7 @@ public class main {
                     }
                     
                     System.out.println("\nPressione enter para voltar para o menu principal.");
-                    read.nextLine();
+           
                     read.nextLine();
                     
                     break;
@@ -137,7 +139,7 @@ public class main {
 
                     System.out.println(sb.toString());
                     System.out.println("Pressione enter para voltar para menu principal.");
-                    read.nextLine();
+
                     read.nextLine();
                     break;
                     
